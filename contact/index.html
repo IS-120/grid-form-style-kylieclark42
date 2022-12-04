@@ -28,7 +28,7 @@
 
 </head>
 
-<body>
+<body class="contact">
   <header>
     <div class="menu-icon">
       <svg viewbox="0 0 60 60" width="40px" height="40px">
@@ -45,7 +45,73 @@
     </nav>
   </header>
   <h1>Contact</h1>
-  <img src="../images/email-logo.svg" alt="Email icon.">
+  <main>
+    <div class="image-wrapper">
+      <img src="../images/email-logo.svg" alt="Email icon.">
+    </div>
+    <form>
+      <label for="name">Full name</label>
+      <input type="text" name="name" id="name">
+
+
+      <label for="email">Email address</label>
+      <input type="email" name="email" id="email" required>
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>What category is your new recipe? (Check all that apply)</legend>
+
+          <input type="checkbox" id="breakfast" name="ingredients" value="breakfast">
+          <label for="breakfast">Breakfast</label>
+
+          <input type="checkbox" id="lunch" name="ingredients" value="lunch">
+          <label for="lunch">Lunch</label>
+
+          <input type="checkbox" id="dinner" name="ingredients" value="dinner">
+          <label for="dinner">Dinner</label>
+
+          <input type="checkbox" id="dessert" name="ingredients" value="dessert">
+          <label for="dessert">Dessert</label>
+
+          <input type="checkbox" id="snack" name="ingredients" value="snack">
+          <label for="snack">Snack</label>
+
+        </fieldset>
+      </div>
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>How would you rate your recipe?</legend>
+
+          <input type="radio" name="taste" id="one" value="one">
+          <label for="one">1-Star</label>
+
+          <input type="radio" name="taste" id="two" value="two">
+          <label for="two">2-Stars</label>
+
+          <input type="radio" name="taste" id="three" value="three">
+          <label for="three">3-Stars</label>
+
+          <input type="radio" name="taste" id="four" value="four">
+          <label for="four">4-Stars</label>
+
+          <input type="radio" name="taste" id="five" value="five">
+          <label for="five">5-Stars</label>
+        </fieldset>
+      </div>
+
+      <label for="recipe">Please write ingredients first, then instructions.</label>
+      <textarea name="recipe" id="recipe" rows="10" placeholder="Write your recipe here"></textarea>
+
+      <button>Send</button>
+
+    </form>
+
+
+  </main>
+  <script>
+    document.querySelector(".menu-icon").addEventListener("click", function () {
+      this.parentElement.classList.toggle("close");
+    });
+  </script>
 </body>
 
 </html>
