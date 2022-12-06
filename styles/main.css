@@ -128,7 +128,7 @@ nav li a:hover {
   align-self: stretch;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
  }
 
  /* this will center then crop the image to fit the hero container */
@@ -426,17 +426,6 @@ header ul {
   display: none;
 }
 
-.hero {  
-  margin: 0;
-  padding: 0;
-  margin-bottom: 3rem;
- 
-}  
-
-.hero img {
-  height: 100%;
-  object-fit: fill;
-}
 
 nav {
   display: contents;
