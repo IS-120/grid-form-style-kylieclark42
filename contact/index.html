@@ -44,15 +44,17 @@
       </ul>
     </nav>
   </header>
-  <h1>Contact</h1>
+  <h1 class="margin">Contact</h1>
+
   <main>
-    <div class="image-wrapper">
+    <div class="svg-wrapper">
       <img src="../images/email-logo.svg" alt="Email icon.">
     </div>
+
+
     <form>
       <label for="name">Full name</label>
       <input type="text" name="name" id="name">
-
 
       <label for="email">Email address</label>
       <input type="email" name="email" id="email" required>
@@ -101,17 +103,19 @@
       <label for="recipe">Please write ingredients first, then instructions.</label>
       <textarea name="recipe" id="recipe" rows="10" placeholder="Write your recipe here"></textarea>
 
-      <button>Send</button>
+      <button class="button">Send</button>
 
     </form>
 
-
   </main>
+
   <script>
     document.querySelector(".menu-icon").addEventListener("click", function () {
       this.parentElement.classList.toggle("close");
     });
   </script>
+
 </body>
+
 
 </html>

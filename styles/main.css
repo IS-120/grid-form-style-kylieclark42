@@ -8,9 +8,17 @@
   background-color: #f6f6f6;
   font-family: "DM Sans", sans-serif;
   color: var(--grey);
+  /* Contact form stuff */
+  --radio-width: 20px;
+  --radio-border-width: 3px;
+  --radio-inset: 5px;
+  --radio-color: #980200;
+  --radio-border-color: #980200;
+  --check-border-width: 2px;
+  --form-color: #eee;
 }
 /* ------ MAIN STUFF -------- */
-*{
+*, *::after, *::before {
   box-sizing: border-box;
 }
 
@@ -308,10 +316,6 @@ img[srcset] {
   margin: 2rem auto;
 }
 
-/* temporary fix to size svg images */
-img[src$="svg"] {
-  width: 200px;
-}
 
 nav ul {
   margin: 0;
@@ -356,18 +360,111 @@ nav ul {
   margin: 0;
 }
 
+.margin {
+margin-bottom: 6rem;
+}
+
 .contact legend {
   grid-column: 1 / -1;
 }
 
 .contact button {
   justify-self: center;
+  margin-bottom: 6rem;
 }
 
 .contact main {
   display: flex;
   flex-direction: column;
 }
+
+.contact svg {
+  width: 100%;
+  height: auto;
+}
+
+.contact .svg-wrapper {
+  max-width: 300px;
+  min-width: 100px;
+  align-self: center;
+}
+
+input[type=checkbox], input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none ;
+  width: var(--radio-width);
+  height: var(--radio-width);
+  border: var(--radio-border-width) solid var(--radio-border-color);
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type=radio] {
+  border-radius: 50%;
+}
+
+
+input[type=checkbox]::after, input[type=radio]::after {
+  content: "";
+  display: block;
+
+  grid-row: 1/ span 1;
+  grid-column: 1/ span 1;
+ }
+
+ input[type=checkbox]::after {
+  width: calc(var(--radio-width) - 3*var(--radio-inset));
+  height: calc(var(--radio-width) - 2*var(--radio-inset));
+  border-right: var(--radio-border-width) solid var(--radio-border-color);
+  border-bottom: var(--radio-border-width) solid var(--radio-border-color);
+  
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 50ms;
+ }
+
+
+  input[type=radio]::after { 
+  width: calc(var(--radio-width) - 2*var(--radio-inset));
+  height: calc(var(--radio-width) - 2*var(--radio-inset));
+  background-color: var(--radio-color);
+  border-radius: 50%;   
+  transform: scale(0);
+  transition: transform 100ms;
+  }
+
+  input[type=radio]:checked::after{
+    transform: scale(1);
+    }
+
+    input[type=checkbox]:checked::after{
+      opacity: 1;
+      }
+    
+
+
+@media (min-width: 601px) {
+
+  .contact form > label,
+  .contact .fieldset-wrapper,
+  .contact button {
+    margin-top: 0;
+  }
+
+  .contact main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contact .svg-wrapper {
+    align-self:flex-start;
+    margin-top: 0;
+  }
+}
+
+
 /* ------------------------------------------ */
 
 
